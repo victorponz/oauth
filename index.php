@@ -11,10 +11,8 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
   $client->setAccessToken($_SESSION['access_token']);
   $drive = new Google_Service_Drive($client);
   $files = $drive->files->listFiles()->getFiles();
-  print_r($client);
   foreach($files as $file){
-  	//echo $file['name'] . "-" . $file['mimeType'] . "<br>";
-  	//print_r($file);
+  	echo $file['name'] . "-" . $file['mimeType'] . "<br>";
   }
   
 } else {
